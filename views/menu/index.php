@@ -53,15 +53,9 @@
             <?php endfor ?>
         </table>
 
-
+        <button class="btn btn-primary" id="viewer" >visualizar</button>
 
     </div>
-
-
-    <!-- Modal -->
-
-    
-
 
     <div class="modal fade" id="modalForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -102,6 +96,8 @@
             </div>
         </div>
     </div>
+
+
 
 
     <script>
@@ -165,6 +161,12 @@
             btnsEditar[i].addEventListener('click', fetchMenu);
             btnsEliminar[i].addEventListener('click', deleteMenu);        
         }
+
+        document.getElementById("viewer").addEventListener('click', () => {
+            axios.get(`http://localhost/prueba-tecnica/menu/catalogo`).then((res) => {
+                window.location.href = "http://localhost/prueba-tecnica/menu/catalogo";
+            })
+        });
 
     </script>
 </body>
