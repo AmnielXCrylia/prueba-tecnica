@@ -10,6 +10,13 @@ class MenuController {
         view("menu.index", ["menus" => $menu, "subMenus" => $subMenu]);
     }
 
+    public function catalogo()
+    {
+        $menu = Menu::all();
+        $subMenu = SubMenu::all();
+        view("menu.catalogo", ["menus" => $menu, "subMenus" => $subMenu]);
+    }
+
     public function createMenu() 
     {
         $data = json_decode(file_get_contents('php://input'));
